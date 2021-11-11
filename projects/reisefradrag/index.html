@@ -1,24 +1,77 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <meta charset="UTF-8"> 
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <h1>Reisefradrag</h1>
         <p>For beregning av skattefradrag for jobbreise.</p>
 
-        <form action="" method="get">
+        <form method="get">
             <label for="traveltype">Type reise</label>
             <select name="traveltype" id="traveltype">
                 <option value="arbeidsreiser">Arbeidsreise</option>
                 <option value="besoeksreiser">Besøksreise</option>
             </select>
-            <label for="km">Antall km:</label>
-            <input id="km" name="km" type="number" min="0" max="75000" />
-            <label for="utgifterBomFergeEtc">Beløp for ferge/bom:</label>
-            <input id="utgifterBomFergeEtc" name="utgifterBomFergeEtc" type="number" min="0"/>
-
-            <input type="submit" value="Kalkulér">
+            <input type="submit" value="Legg til">
         </form>
+
+        <form action="" method="get">
+            <label for="km">Antall km:</label>
+            <input id="km" name="km" type="number" min="0" max="75000" /><br/>
+            
+            <input type="submit" value="Legg til">
+        </form>
+
+        <form method="get">
+            <label for="utgifterBomFergeEtc">Totalt beløp for ferge/bom:</label>
+            <input id="utgifterBomFergeEtc" name="utgifterBomFergeEtc" type="number" min="0"/><br/>
+
+            <input type="submit" value="Oppdatér">
+        </form>
+
+        <section>
+            <h2>Reisefradag lagt til</h2>
+            <p>Opplisting av reisefradag klare til å bli sendt inn.</p>
+            <ol>
+                <li>
+                    <p><b>Arbeidsreise:</b></p>
+                    <ul>
+                        <li><em>X</em> km</li>
+                        <li><em>Y</em></li>
+                    </ul>
+                    <p><b>Besøksreise:</b></p>
+                    <ul>
+                        <li><em>X</em> km</li>
+                        <li><em>Y</em></li>
+                    </ul>
+                    <p><b>Ferge/bom:</b><em>Beløp</em></p>
+                </li>
+            </ol>
+            <button type="submit">Send inn fradragene</button>
+            <button type="submit">Nullstill</button>
+        </section>
+
+        <section>
+            <h2>Utregnet fradrag</h2>
+            <p>Resultat kalkulert basert på innsendte data for fradrag.</p>
+            <p><em>Resultat</em></p>
+        </section>
     </body>
+
+    <!--
+        For hvert fradag som fylles inn legges de til i en liste.
+            - Per nå er det bare lagt opp til utlisting av fradrag som er lagt inn
+            - Den totale fradragsoversikten sendes inn ved trykk på knapp i bunnen av utlistingen
+                - Resultatet vises i bunnen
+            - Eventuelt er det lagt opp til en "Nullstill"-knapp
+
+        Funksjonalitet er ikke implementert. HTML-koden er bare skissert opp til en tenkt løsning, litt tilsvarende pseudokode
+        
+        Mangler:
+            - Utfylte felter legges til i oversiktslisten
+            - Redigere enkeltfelt
+            - Innsending av skjema mot API
+    -->
 </html>
